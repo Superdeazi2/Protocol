@@ -8,11 +8,10 @@ import Button from './Button.jsx'
 
 function Logo() {
   return (
-    <NavLink to="/" className="site-logo" aria-label="Protocol">
+    <NavLink to="/" className="select-none cursor-default" aria-label="Protocol">
       <img
-        className="site-logo__text"
         src={protocolLogo}
-        alt=""
+        alt="logo"
         aria-hidden="true"
         draggable="false"
       />
@@ -59,13 +58,13 @@ function MenuButton({ isOpen, onClick }) {
       <img
         className="menu-button__icon menu-button__icon--closed"
         src={menuBurgerIcon}
-        alt=""
+        alt="burger menu icon"
         aria-hidden="true"
       />
       <img
         className="menu-button__icon menu-button__icon--open"
         src={menuBurgerOpenIcon}
-        alt=""
+        alt="burger menu icon"
         aria-hidden="true"
       />
     </button>

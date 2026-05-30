@@ -1,10 +1,12 @@
+import Footer from './components/Footer.jsx'
 import Header from './components/Header.jsx'
 
 function App() {
   return (
     <div className="page-shell">
       <Header />
-      <main className="content-shell min-h-[calc(100dvh-88px)]" />
+      <main className="content-shell flex-1" />
+      <Footer />
     </div>
   )
 }
