@@ -1,0 +1,25 @@
+<svg width="104" height="28" viewBox="0 0 104 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @font-face {
+        font-family: "Chakra Petch";
+        src: url("../Chakra_Petch/ChakraPetch-Bold.ttf") format("truetype");
+        font-weight: 700;
+      }
+
+      .logo {
+        fill: #ede8ff;
+        font-family: "Chakra Petch", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.04px;
+        text-transform: uppercase;
+      }
+    </style>
+    <filter id="logoGlow" x="-24" y="-18" width="140" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#9D7BFF" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <text class="logo" x="8" y="18" filter="url(#logoGlow)">Protocol</text>
+</svg>

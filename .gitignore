@@ -12,6 +12,24 @@ dist
 dist-ssr
 *.local
 
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local agent/instruction files
+AGENTS.md
+.notes/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*~
+*.Zone.Identifier
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
