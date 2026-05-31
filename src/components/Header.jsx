@@ -83,7 +83,7 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="site-header">
+    <header className="site-header select-none">
       <div className="content-shell relative z-20 flex h-[88px] items-center justify-between">
         <Logo />
         <Nav isOpen={isMenuOpen} onNavigate={() => setIsMenuOpen(false)} />
