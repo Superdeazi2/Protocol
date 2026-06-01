@@ -1,4 +1,6 @@
-# Protocol Site
+<img width="2558" height="1255" alt="main" src="https://github.com/user-attachments/assets/778a40f4-1c6e-46c4-a367-3142b42fc46d" />
+<img width="1280" height="627" alt="login" src="https://github.com/user-attachments/assets/864dc08e-d5a9-4bc7-b7e2-8dd258dab6f4" />
+<img width="1280" height="626" alt="register" src="https://github.com/user-attachments/assets/bad045fc-a101-4df3-a247-151cf64ced0e" />
 
 Frontend-сайт для игры **Protocol**. Проект разрабатывается как официальный веб-сайт игры: главная страница, навигация, информационные разделы, новости, авторизация, регистрация и профиль игрока.
 
