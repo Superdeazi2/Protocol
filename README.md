@@ -32,8 +32,12 @@ Frontend-проект игрового веб-сайта, разработанн
 ## Запуск проекта
 
 ```bash
+Склонировать репозиторий по SSH в нужную папку, запуск:
+
+git clone git@github.com:Superdeazi2/protocol-site.git
 npm install
 npm run dev
+http://localhost:5173
 ```
 
 ## Автор
