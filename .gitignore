@@ -40,3 +40,5 @@ AGENTS.md
 *.njsproj
 *.sln
 *.sw?
+src/data/authSchema.md
+src/data/.authSchema.md

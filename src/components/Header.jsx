@@ -4,7 +4,9 @@ import { navigationItems } from '../data/navigation.js'
 import menuBurgerIcon from '../assets/fonts/svg/menu_burgerochek.svg'
 import menuBurgerOpenIcon from '../assets/fonts/svg/menu_burgerochek_open.svg'
 import protocolLogo from '../assets/fonts/svg/protocol_logo.svg'
+import { getCurrentUser } from '../data/authStorage.js'
 import Button from './Button.jsx'
+import PlayerBadge from './auth/PlayerBadge.jsx'
 
 function Logo() {
   return (
@@ -72,8 +74,14 @@ function MenuButton({ isOpen, onClick }) {
 }
 
 function LoginButton() {
+  const user = getCurrentUser()
+
+  if (user) {
+    return <PlayerBadge user={user} />
+  }
+
   return (
-    <Button className="min-h-10 w-28 px-0 max-sm:w-24">
+    <Button as={NavLink} to="/login" className="min-h-10 w-28 px-0 max-sm:w-24">
       Войти
     </Button>
   )

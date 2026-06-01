@@ -1,5 +1,6 @@
 import Button from './Button.jsx'
 import NewsPanel from './NewsPanel.jsx'
+import CharacterSprite from './CharacterSprite.jsx'
 
 const statusItems = [
   'СТАТУС ПРОЕКТА',
@@ -10,7 +11,7 @@ const statusItems = [
 function Main() {
   return (
     <section className="main-bg">
-      <div className="content-shell relative z-10 grid min-h-[480px] grid-cols-[minmax(330px,1fr)_330px] items-center gap-9 py-[34px] pb-5 max-lg:grid-cols-1 max-md:items-start max-md:py-[42px] max-md:pb-[30px]">
+      <div className="content-shell relative z-10 grid min-h-[480px] grid-cols-[minmax(330px,1fr)_minmax(360px,520px)_330px] items-center gap-9 py-[34px] pb-5 max-lg:grid-cols-1 max-md:items-start max-md:py-[42px] max-md:pb-[30px]">
         <div className="w-[min(100%,520px)] min-w-0">
           <p className="ui-label text-accent m-0 mb-[18px] text-[18px] max-sm:text-[14px] max-sm:leading-[1.4] select-none">Планета расколота</p>
           <h1 className="main-title text-glow select-none">Protocol</h1>
@@ -33,9 +34,10 @@ function Main() {
                 {item}
               </span>
             ))}
+
           </div>
         </div>
-
+        <CharacterSprite />
         <NewsPanel />
       </div>
     </section>

@@ -1,8 +1,8 @@
-function Button({ children, className = '', ...props }) {
+function Button({ as: Component = 'button', children, className = '', ...props }) {
   return (
-    <button className={`btn ui-label ${className}`.trim()} {...props}>
+    <Component className={`btn ui-label ${className}`.trim()} {...props}>
       <span>{children}</span>
-    </button>
+    </Component>
   )
 }
 

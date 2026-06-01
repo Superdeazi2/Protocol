@@ -72,6 +72,10 @@ export function NavLink({ to, className, children, onClick, ...props }) {
   )
 }
 
+export function useNavigate() {
+  return useContext(RouterContext).navigate
+}
+
 export function Route() {
   return null
 }
