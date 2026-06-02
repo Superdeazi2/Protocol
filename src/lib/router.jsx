@@ -39,6 +39,7 @@ export function BrowserRouter({ children }) {
 
         window.history.pushState({}, '', to)
         setPathname(getPathname())
+        window.scrollTo({ top: 0, left: 0 })
       },
     }),
     [pathname],
@@ -80,12 +81,58 @@ export function Route() {
   return null
 }
 
+function getRouteMatch(routePath, pathname) {
+  const routeParts = routePath.split('/').filter(Boolean)
+  const pathParts = pathname.split('/').filter(Boolean)
+
+  if (routeParts.length !== pathParts.length) {
+    return null
+  }
+
+  const params = {}
+
+  for (let index = 0; index < routeParts.length; index += 1) {
+    const routePart = routeParts[index]
+    const pathPart = pathParts[index]
+
+    if (routePart.startsWith(':')) {
+      params[routePart.slice(1)] = decodeURIComponent(pathPart)
+      continue
+    }
+
+    if (routePart !== pathPart) {
+      return null
+    }
+  }
+
+  return params
+}
+
 export function Routes({ children }) {
   const { pathname } = useContext(RouterContext)
   const routes = Children.toArray(children).filter(isValidElement)
   const activeRoute =
-    routes.find((route) => route.props.path === pathname) ??
+    routes.find((route) => route.props.path === pathname)
+
+  if (activeRoute) {
+    return cloneElement(activeRoute.props.element)
+  }
+
+  const routeWithParams = routes
+    .map((route) => ({
+      route,
+      params: getRouteMatch(route.props.path, pathname),
+    }))
+    .find(({ params }) => params)
+
+  if (routeWithParams) {
+    return cloneElement(routeWithParams.route.props.element, {
+      params: routeWithParams.params,
+    })
+  }
+
+  const fallbackRoute =
     routes.find((route) => route.props.path === '/')
 
-  return activeRoute ? cloneElement(activeRoute.props.element) : null
+  return fallbackRoute ? cloneElement(fallbackRoute.props.element) : null
 }
