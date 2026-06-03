@@ -119,6 +119,72 @@ button {
     background: rgba(7, 8, 22, 0.86);
   }
 
+  .about-visual {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    padding: 22px;
+  }
+
+  .about-visual::before,
+  .about-visual::after,
+  .about-visual__core,
+  .about-visual__line,
+  .about-visual__platform {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .about-visual::before {
+    content: "";
+    inset: 0;
+    background: radial-gradient(circle at 50% 44%, rgba(157, 123, 255, 0.25), rgba(108, 92, 231, 0.08) 34%, transparent 62%);
+  }
+
+  .about-visual::after,
+  .about-visual__core {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .about-visual::after {
+    content: "";
+    width: 170px;
+    height: 170px;
+    border: 1px solid rgba(157, 123, 255, 0.6);
+    background: rgba(108, 92, 231, 0.1);
+    box-shadow: 0 0 52px rgba(157, 123, 255, 0.28);
+  }
+
+  .about-visual__core {
+    width: 96px;
+    height: 96px;
+    border: 1px solid rgba(201, 167, 255, 0.7);
+    background: rgba(9, 10, 26, 0.8);
+    box-shadow: 0 0 30px rgba(201, 167, 255, 0.32);
+  }
+
+  .about-visual__line {
+    left: 34px;
+    right: 34px;
+    bottom: 54px;
+    height: 1px;
+    background: rgba(157, 123, 255, 0.35);
+  }
+
+  .about-visual__platform {
+    left: 50%;
+    bottom: 32px;
+    width: 210px;
+    height: 44px;
+    transform: translateX(-50%);
+    border: 1px solid rgba(157, 123, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(157, 123, 255, 0.1);
+    filter: blur(1px);
+  }
+
   .icon-accent {
     color: var(--primary-glow);
     opacity: 0.75;
@@ -448,6 +514,10 @@ button {
 @media (max-width: 767px) {
   .content-shell {
     padding-inline: 18px;
+  }
+
+  .about-visual {
+    min-height: 300px;
   }
 
   .site-nav {

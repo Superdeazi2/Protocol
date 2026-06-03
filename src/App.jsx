@@ -2,13 +2,14 @@ import { Route, Routes } from './lib/router.jsx'
 import Footer from './components/Footer.jsx'
 import Header from './components/Header.jsx'
 import AccountPage from './pages/AccountPage.jsx'
+import AboutPage from './pages/AboutPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import NewsDetailPage from './pages/NewsDetailPage.jsx'
 import NewsPage from './pages/NewsPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 
-const placeholderRoutes = ['/updates', '/about', '/community']
+const placeholderRoutes = ['/updates', '/community']
 
 function EmptyPage() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/news" element={<NewsPage />} />
       <Route path="/news/:slug" element={<NewsDetailPage />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/account" element={<AccountPage />} />
